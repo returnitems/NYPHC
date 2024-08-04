@@ -29,3 +29,20 @@ export const createPlayer = async (playerData) => {
     }
 };
 
+export const updatePlayer = async (playerId, playerData) => {
+    try {
+        const response = await axios.put(`${BASE_URL}/${playerId}`, playerData);
+        return response.data;
+    } catch (error) {
+        console.error('Error updating player:', error);
+    }
+};
+
+export const deletePlayer = async (playerId) => {
+    try {
+        const response = await axios.delete(`${BASE_URL}/${playerId}`);
+        return response.data;
+    } catch (error) {
+        console.error('Error deleting player:', error);        
+    }
+};
