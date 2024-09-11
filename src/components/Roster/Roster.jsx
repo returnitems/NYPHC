@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { getPlayers } from "../../services/playerService";
 
 export const Roster = () => {
@@ -12,10 +12,15 @@ export const Roster = () => {
             if (!players) {
                 throw new Error("No Players ")
             }
+            setPlayerList(players);
         } catch (error) {
-            
+            console.error(error);           
         }
-    }
+    };
+
+    useEffect(() => {
+        fetchPlayers();
+    }, []);
 
     return (
         <div>
