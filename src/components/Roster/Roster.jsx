@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import { getPlayers } from "../../services/playerService";
+import { Link } from "react-router-dom";
 
-export const Roster = () => {
+export const Roster = (setSelectedPlayer) => {
 
     const [playerList, setPlayerList] = useState([]);
-    const [selectedPlayer, setSelectedPlayer] = useState(null);
+
+    const handleClick = (player) => {
+        setSelectedPlayer(player);
+    };
 
     const fetchPlayers = async () => {
         try {
@@ -25,6 +29,18 @@ export const Roster = () => {
     return (
         <div>
             <h1>New York Pucksters H.C. Current Roster</h1>
+            <div>
+                {playerList.map((player) => (
+                    <div key={player._id}>
+                        <Link to={`/players/${player._id}`} onClick={() => handleClick(player)} >
+                            <h2>{player.name}</h2>
+                        </Link>
+                    </div>
+                ))}
+                <Link to='/players/new'>
+                    <button>Add New Player</button>
+                </Link>
+            </div>
         </div>
     )
 };
