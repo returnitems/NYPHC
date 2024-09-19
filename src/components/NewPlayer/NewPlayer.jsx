@@ -1,60 +1,31 @@
+import { useState } from "react";
+
 export const NewPlayer = () => {
+    const [formData, setFormData] = useState({
+        name: "",
+        age: "",
+        position: "",
+        height: "",
+        weight: "",
+        shoots: "",
+        birthplace: "",
+        drafted: "",
+    });
+
+    const handleChange = (event) => {
+        setFormData({...formData, [event.target.name]: event.target.value});
+    };
+
+
 
     return (
-        <div className="container">
-            <h4 className="new-form-heading">Add a new property</h4>
-            <hr />
-            <form className="new-form" onSubmit={handleSubmit}>
-                <label htmlFor="name" className="form-label">
-                    Property Name
-                </label>
-                <input
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="form-control"
-                />
+        <div>
+            <form>
+                <label htmlFor="name">Player Name:</label>
+                <input id="name" name="name" value={formData.name} onChange={handleChange} />
 
-                <label htmlFor="price" className="form-label">
-                    Price of Property
-                </label>
-                <input
-                    id="price"
-                    name="price"
-                    value={formData.price}
-                    onChange={handleChange}
-                    required
-                    className="form-control"
-                />
-
-                <label htmlFor="location" className="form-label">
-                    Address of Property
-                </label>
-                <input
-                    id="location"
-                    name="location"
-                    value={formData.location}
-                    onChange={handleChange}
-                    required
-                    className="form-control"
-                />
-
-                <label htmlFor="apartments" className="form-label">
-                    Number of Apartments
-                </label>
-                <input
-                    id="apartments"
-                    name="apartments"
-                    value={formData.apartments}
-                    onChange={handleChange}
-                    required
-                    className="form-control"
-                />
-                <button className="btn btn-info" type="submit">
-                    Add Property
-                </button>
+                <label htmlFor="age">Player Age:</label>
+                <input id="age" name="age" value={formData.age} onChange={handleChange} />
             </form>
         </div>
     );
