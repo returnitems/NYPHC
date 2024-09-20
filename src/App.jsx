@@ -9,14 +9,14 @@ import "./App.css";
 function App() {
 
   const [selectedPlayer, setSelectedPlayer] = useState(null);
-
+  
   return (
     <>
       <Navbar />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/players" element={<Roster setSelectedPlayer={setSelectedPlayer} />} />
-        <Route path="/players/new" element={<NewPlayer selectedPlayer={selectedPlayer}/>} />
+        <Route path="/players/new" element={<NewPlayer />} />
       </Routes>
     </>
   );
