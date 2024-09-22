@@ -36,7 +36,7 @@ function App() {
         throw new Error(newPlayer.error)
       }
       setPlayerList([newPlayer, ...playerList]);
-      Navigate('/players');
+      // Navigate('/players');
     } catch (error) {
       console.log(error);
     }
