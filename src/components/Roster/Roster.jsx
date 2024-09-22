@@ -1,30 +1,10 @@
-import { useEffect, useState } from "react";
-import { getPlayers } from "../../services/playerService";
 import { Link } from "react-router-dom";
 
-export const Roster = (setSelectedPlayer) => {
-
-    const [playerList, setPlayerList] = useState([]);
+export const Roster = (setSelectedPlayer, playerList) => {
 
     const handleClick = (player) => {
         setSelectedPlayer(player);
     };
-
-    const fetchPlayers = async () => {
-        try {
-            const players = await getPlayers();
-            if (!players) {
-                throw new Error("No Players ")
-            }
-            setPlayerList(players);
-        } catch (error) {
-            console.error(error);           
-        }
-    };
-
-    useEffect(() => {
-        fetchPlayers();
-    }, []);
 
     return (
         <div>

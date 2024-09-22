@@ -1,9 +1,7 @@
 import { useState } from "react";
-import { createPlayer } from "../../services/playerService";
 import { Navigate } from "react-router-dom";
-import { playerList, setPlayerList } from "../Roster/Roster";
 
-export const NewPlayer = () => {
+export const NewPlayer = (handleAddPlayer) => {
     const [formData, setFormData] = useState({
         name: "",
         age: "",
@@ -17,19 +15,6 @@ export const NewPlayer = () => {
 
     const handleChange = (event) => {
         setFormData({...formData, [event.target.name]: event.target.value});
-    };
-
-    const handleAddPlayer = async (formData) => {
-        try {
-            const newPlayer = await createPlayer(formData)
-            if (newPlayer.error) {
-                throw new Error(newPlayer.error)
-            }
-            setPlayerList([newPlayer, ...playerList]);
-            Navigate('/players');
-        } catch (error) {
-            console.log(error);
-        }
     };
 
     const handleSubmit = (event) => {
