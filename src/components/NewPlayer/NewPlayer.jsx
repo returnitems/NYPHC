@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
 
-export const NewPlayer = (handleAddPlayer) => {
+export const NewPlayer = ({ handleAddPlayer }) => {
     const [formData, setFormData] = useState({
         name: "",
         age: "",
