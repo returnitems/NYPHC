@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Routes, Route, Outlet, Link } from "react-router-dom";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import * as playerService from "./services/playerService.js"
 import { Navbar } from "./components/Navbar/Navbar";
 import { Homepage } from "./components/Homepage/Homepage";
@@ -12,6 +12,8 @@ function App() {
 
   const [selectedPlayer, setSelectedPlayer] = useState(null);
   const [playerList, setPlayerList] = useState([]);
+
+  const navigate = useNavigate();
 
   const fetchPlayers = async () => {
     try {
@@ -36,7 +38,7 @@ function App() {
         throw new Error(newPlayer.error)
       }
       setPlayerList([newPlayer, ...playerList]);
-      // Navigate('/players');
+      navigate('/players');
     } catch (error) {
       console.log(error);
     }
