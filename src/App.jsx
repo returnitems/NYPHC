@@ -7,6 +7,7 @@ import { Homepage } from "./components/Homepage/Homepage";
 import { Roster } from "./components/Roster/Roster";
 import { NewPlayer } from "./components/NewPlayer/NewPlayer";
 import { PlayerDetail } from "./components/PlayerDetail/PlayerDetail.jsx";
+import { PlayerUpdate } from "./components/PlayerUpdate/PlayerUpdate.jsx";
 import "./App.css";
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
         <Route path="/players" element={<Roster setSelectedPlayer={setSelectedPlayer} playerList={playerList} />} />
         <Route path="/players/new" element={<NewPlayer handleAddPlayer={handleAddPlayer} />} />
         <Route path="/players/:id" element={<PlayerDetail selectedPlayer={selectedPlayer} />} />
+        <Route path="/players/:id/update" element={<PlayerUpdate selectedPlayer={selectedPlayer} />} />
       </Routes>
     </>
   );
