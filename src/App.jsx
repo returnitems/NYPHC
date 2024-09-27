@@ -46,6 +46,20 @@ function App() {
     }
   };
 
+  const handleUpdatePlayer = async (formData, playerId) => {
+    try {
+      const updatePlayer = await playerService.updatePlayer(formData, playerId);
+      if (updatePlayer.error) {
+        throw new Error(updatePlayer.error)
+      }
+      setPlayerList(playerList.map((player) => (player._id === playerId ? updatePlayer : player)));
+      setSelectedPlayer(updatePlayer);
+      navigate('/players/:id');
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <Navbar />
@@ -54,7 +68,7 @@ function App() {
         <Route path="/players" element={<Roster setSelectedPlayer={setSelectedPlayer} playerList={playerList} />} />
         <Route path="/players/new" element={<NewPlayer handleAddPlayer={handleAddPlayer} />} />
         <Route path="/players/:id" element={<PlayerDetail selectedPlayer={selectedPlayer} />} />
-        <Route path="/players/:id/update" element={<PlayerUpdate selectedPlayer={selectedPlayer} />} />
+        <Route path="/players/:id/update" element={<PlayerUpdate selectedPlayer={selectedPlayer} handleUpdatePlayer={handleUpdatePlayer} />} />
       </Routes>
     </>
   );
