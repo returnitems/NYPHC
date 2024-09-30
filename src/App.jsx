@@ -54,7 +54,7 @@ function App() {
       }
       setPlayerList(playerList.map((player) => (player._id === playerId ? updatePlayer : player)));
       setSelectedPlayer(updatePlayer);
-      navigate('/players/:id');
+      navigate(`/players/${playerId}`);
     } catch (error) {
       console.log(error);
     }
@@ -68,7 +68,7 @@ function App() {
         <Route path="/players" element={<Roster setSelectedPlayer={setSelectedPlayer} playerList={playerList} />} />
         <Route path="/players/new" element={<NewPlayer handleAddPlayer={handleAddPlayer} />} />
         <Route path="/players/:id" element={<PlayerDetail selectedPlayer={selectedPlayer} />} />
-        <Route path="/players/:id/update" element={<PlayerUpdate selectedPlayer={selectedPlayer} handleUpdatePlayer={handleUpdatePlayer} />} />
+        <Route path="/players/:id/edit" element={<PlayerUpdate selectedPlayer={selectedPlayer} handleUpdatePlayer={handleUpdatePlayer} />} />
       </Routes>
     </>
   );

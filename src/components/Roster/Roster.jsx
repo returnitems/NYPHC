@@ -11,7 +11,7 @@ export const Roster = ({ setSelectedPlayer, playerList }) => {
             <h1>New York Pucksters H.C. Current Roster</h1>
             {playerList.map((player) => (
                 <div key={player._id}>
-                    <Link to={`/players/${player._id}`} onClick={handleClick(player)}>
+                    <Link to={`/players/${player._id}`} onClick={() => handleClick(player)}>
                         <h2>{player.name}</h2>
                     </Link>
                 </div>

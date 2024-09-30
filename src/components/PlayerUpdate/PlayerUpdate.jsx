@@ -63,7 +63,7 @@ export const PlayerUpdate = ({ selectedPlayer, handleUpdatePlayer }) => {
                 <label htmlFor="drafted">Year Drafted:</label>
                 <input id="drafted" name="drafted" value={formData.drafted} onChange={handleUpdate} />
 
-                <button type="submit">Add Player</button>
+                <button type="submit">Update Player</button>
             </form>
         </div>
     );

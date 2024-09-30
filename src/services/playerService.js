@@ -29,9 +29,9 @@ export const createPlayer = async (playerData) => {
     }
 };
 
-export const updatePlayer = async (playerId, playerData) => {
+export const updatePlayer = async (formData, playerId) => {
     try {
-        const response = await axios.put(`${BASE_URL}/${playerId}`, playerData);
+        const response = await axios.put(`${BASE_URL}/${playerId}`, formData);
         return response.data;
     } catch (error) {
         console.error('Error updating player:', error);
