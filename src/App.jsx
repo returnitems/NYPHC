@@ -8,6 +8,7 @@ import { Roster } from "./components/Roster/Roster";
 import { NewPlayer } from "./components/NewPlayer/NewPlayer";
 import { PlayerDetail } from "./components/PlayerDetail/PlayerDetail.jsx";
 import { PlayerUpdate } from "./components/PlayerUpdate/PlayerUpdate.jsx";
+import { PlayerDelete } from "./components/PlayerDelete/PlayerDelete.jsx";
 import "./App.css";
 
 function App() {
@@ -69,6 +70,7 @@ function App() {
         <Route path="/players/new" element={<NewPlayer handleAddPlayer={handleAddPlayer} />} />
         <Route path="/players/:id" element={<PlayerDetail selectedPlayer={selectedPlayer} />} />
         <Route path="/players/:id/edit" element={<PlayerUpdate selectedPlayer={selectedPlayer} handleUpdatePlayer={handleUpdatePlayer} />} />
+        <Route path="/players/:id/delete" element={<PlayerDelete />} />
       </Routes>
     </>
   );
