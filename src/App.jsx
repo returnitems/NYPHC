@@ -70,7 +70,7 @@ function App() {
         <Route path="/players/new" element={<NewPlayer handleAddPlayer={handleAddPlayer} />} />
         <Route path="/players/:id" element={<PlayerDetail selectedPlayer={selectedPlayer} />} />
         <Route path="/players/:id/edit" element={<PlayerUpdate selectedPlayer={selectedPlayer} handleUpdatePlayer={handleUpdatePlayer} />} />
-        <Route path="/players/:id/delete" element={<PlayerDelete />} />
+        <Route path="/players/:id/delete" element={<PlayerDelete selectedPlayer={selectedPlayer} />} />
       </Routes>
     </>
   );
