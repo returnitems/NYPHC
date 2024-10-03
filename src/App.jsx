@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import * as playerService from "./services/playerService.js"
 import { Navbar } from "./components/Navbar/Navbar";
