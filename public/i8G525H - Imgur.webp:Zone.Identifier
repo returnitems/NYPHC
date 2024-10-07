@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://cloudconvert.com/
+HostUrl=https://us-east.storage.cloudconvert.com/tasks/8d6acee8-2800-45c5-bfcf-31db46a468cb/i8G525H%20-%20Imgur.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cloudconvert-production%2F20241007%2Fva%2Fs3%2Faws4_request&X-Amz-Date=20241007T043110Z&X-Amz-Expires=86400&X-Amz-Signature=9e3eabb222f15911704ec1c1b623372f8e9f54d1327580f1f7e534aa4ee0a6fa&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3D%22i8G525H%20-%20Imgur.webp%22&response-content-type=image%2Fwebp&x-id=GetObject
