@@ -1,0 +1,9 @@
+#banner {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    color: antiquewhite;
+    font-size: 34px;
+}
